@@ -1,0 +1,26 @@
+# zsh options
+setopt autocd
+
+# Git aliases
+
+alias gst="git status"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias glg="git log"
+
+# Shell aliases
+
+alias ls="eza --icons"
+alias ll="eza -l"
+alias la="eza --icons -a"
+
+# Paths
+
+export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/sbin:$PATH"
+
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+fastfetch
