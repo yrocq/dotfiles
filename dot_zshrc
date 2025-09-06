@@ -2,12 +2,8 @@
 setopt autocd
 setopt share_history
 
-# Git aliases
-
-alias gst="git status"
-alias gco="git checkout"
-alias gcb="git checkout -b"
-alias glg="git log"
+# Disable XON/XOFF to allow push-line
+stty -ixon
 
 # Shell aliases
 
@@ -15,11 +11,30 @@ alias ls="eza --icons"
 alias ll="eza -l"
 alias la="eza --icons -a"
 
+# Git aliases
+
+alias gst="git status"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias glg="git log"
+alias ga="git add"
+alias gcmsg="git add -m"
+alias gp="git push"
+alias gd="git diff"
+
+# Various aliases
+
+alias cm=chezmoi
+
 # Paths
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
 fastfetch
