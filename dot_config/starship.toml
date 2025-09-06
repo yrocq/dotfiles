@@ -1,0 +1,14 @@
+[sudo]
+disabled = false
+
+[git_metrics]
+disabled = false
+
+[status]
+disabled = false
+
+[shell]
+disabled = false
+
+[direnv]
+disabled = false
