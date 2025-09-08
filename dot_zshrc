@@ -18,7 +18,7 @@ alias gco="git checkout"
 alias gcb="git checkout -b"
 alias glg="git log"
 alias ga="git add"
-alias gcmsg="git add -m"
+alias gcmsg="git commit -m"
 alias gp="git push"
 alias gd="git diff"
 
@@ -30,6 +30,7 @@ alias cm=chezmoi
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # Autocomplete
 autoload -U compinit && compinit
@@ -47,5 +48,22 @@ eval "$(fnm completions --shell zsh)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+conda_init() {
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+}
 
 fastfetch
