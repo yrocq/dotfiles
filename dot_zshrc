@@ -21,6 +21,9 @@ alias ga="git add"
 alias gcmsg="git commit -m"
 alias gp="git push"
 alias gd="git diff"
+alias gl="git pull"
+alias gp="git push"
+alias gcm="git checkout master"
 
 # Various aliases
 
