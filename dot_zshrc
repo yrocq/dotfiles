@@ -27,6 +27,7 @@ alias gds="git diff --staged"
 alias gl="git pull"
 alias gp="git push"
 alias gcm="git checkout master"
+alias gb="git branch"
 
 # Various aliases
 
