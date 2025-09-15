@@ -28,11 +28,12 @@ alias gl="git pull"
 alias gp="git push"
 alias gcm="git checkout master"
 alias gb="git branch"
-alias f=fuck
+alias grbi="git rebase --interactive"
 
 # Various aliases
 
 alias cm=chezmoi
+alias f=fuck
 
 # Paths
 
@@ -76,3 +77,6 @@ unset __conda_setup
 }
 
 fastfetch
+
+# Created by `pipx` on 2025-09-15 15:26:01
+export PATH="$PATH:/Users/lbm/.local/bin"
