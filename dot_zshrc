@@ -28,6 +28,7 @@ alias gl="git pull"
 alias gp="git push"
 alias gcm="git checkout master"
 alias gb="git branch"
+alias f=fuck
 
 # Various aliases
 
@@ -41,7 +42,7 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # Autocomplete
 autoload -U compinit && compinit
-source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+source ~/.zsh/repos/fzf-tab/fzf-tab.plugin.zsh
 
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
@@ -55,6 +56,7 @@ eval "$(fnm completions --shell zsh)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
 
 conda_init() {
 # >>> conda initialize >>>
