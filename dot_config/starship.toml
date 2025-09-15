@@ -1,3 +1,5 @@
+command_timeout = 800
+
 [sudo]
 disabled = false
 
@@ -12,3 +14,9 @@ disabled = false
 
 [direnv]
 disabled = false
+
+# ~/.config/starship.toml
+
+[cmd_duration]
+min_time = 500
+format = '[$duration](bold yellow)'
