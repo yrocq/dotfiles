@@ -77,6 +77,3 @@ unset __conda_setup
 }
 
 fastfetch
-
-# Created by `pipx` on 2025-09-15 15:26:01
-export PATH="$PATH:/Users/lbm/.local/bin"
