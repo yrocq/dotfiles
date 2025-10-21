@@ -7,9 +7,9 @@ stty -ixon
 
 # Shell aliases
 
-alias ls="eza --icons"
-alias ll="eza -l"
-alias la="eza --icons -a"
+alias ls="eza --icons auto"
+alias ll="eza --icons auto -l"
+alias la="eza --icons auto -a"
 
 # Git aliases
 
@@ -43,10 +43,10 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # Autocomplete
 autoload -U compinit && compinit
-source ~/.zsh/repos/fzf-tab/fzf-tab.plugin.zsh
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
+source ~/.zsh/repos/fzf-tab/fzf-tab.plugin.zsh
 
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
