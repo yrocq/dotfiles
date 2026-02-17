@@ -79,4 +79,17 @@ unset __conda_setup
 # <<< conda initialize <<<
 }
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/yrocq/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# bun completions
+[ -s "/Users/yrocq/.bun/_bun" ] && source "/Users/yrocq/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 fastfetch
