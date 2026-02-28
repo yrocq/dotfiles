@@ -40,6 +40,7 @@ alias f=fuck
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="/Users/yrocq/go/bin:/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # Autocomplete
 autoload -U compinit && compinit
