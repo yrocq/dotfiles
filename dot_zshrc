@@ -79,4 +79,39 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Local secrets
 [ -f ~/.secrets ] && source ~/.secrets
 
+# Explicit git errors
+# https://monzool.net/blog/2026/04/10/error-banner-in-shell/
+
+print_error_box() {
+    local msg=" $1 "
+    local width=${#msg}
+    local border
+
+    border=$(printf '%*s' "$width" '')
+    border=${border// /─}
+
+    print -P "%F{red}┌${border}┐%f"
+    print -P "%F{red}│%f%K{red}%F{white}${msg}%f%k%F{red}│%f"
+    print -P "%F{red}└${border}┘%f"
+}
+
+typeset -g LAST_CMD=""
+
+preexec() {
+    LAST_CMD="$1"
+}
+
+precmd() {
+    local exit_code=$?
+    if (( exit_code != 0 )) && [[ "$LAST_CMD" == git* ]]; then
+        print_error_box "GURU MEDITATION ERROR"
+    fi
+}
+
+# Display system informations
+
 fastfetch
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/yrocq/.lmstudio/bin"
+# End of LM Studio CLI section
