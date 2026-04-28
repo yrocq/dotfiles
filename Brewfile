@@ -1,4 +1,12 @@
 brew "fzf"
 brew "zsh-autosuggestions"
 brew "carapace"
-
+brew "fnm"
+brew "direnv"
+brew "starship"
+brew "zoxide"
+brew "thefuck"
+brew "fastfetch"
+brew "eza"
+brew "chezmoi"
+brew "delta"
