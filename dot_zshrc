@@ -47,7 +47,7 @@ autoload -U compinit && compinit
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
-source /opt/homebrew/share/fzf-tab
+source /opt/homebrew/share/fzf-tab/fzf-tab.zsh
 
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
