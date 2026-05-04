@@ -12,5 +12,7 @@ brew "chezmoi"
 brew "delta"
 brew "zsh-syntax-highlighting"
 brew "fzf-tab"
+
 cask "visual-studio-code"
 cask "iterm2"
+cask "obsidian"
