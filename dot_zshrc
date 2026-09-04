@@ -1,6 +1,7 @@
 # zsh options
 setopt autocd
 setopt share_history
+setopt interactivecomments
 
 # Disable XON/XOFF to allow push-line
 stty -ixon
