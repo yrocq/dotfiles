@@ -22,7 +22,7 @@ alias ga="git add"
 alias gcmsg="git commit -m"
 alias gcn!="git commit -v --no-edit --amend"
 alias gp="git push"
-alias gpf="git push --force-with-lease"
+alias gpf="git push --force"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gl="git pull"
@@ -49,10 +49,13 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 source /opt/homebrew/share/fzf-tab/fzf-tab.zsh
-
+# Television
+if command -v tv &> /dev/null; then
+    eval "$(tv init zsh)"
+fi
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# Tools
+# Tools 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -64,6 +67,9 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/yrocq/.docker/completions $fpath)
+# End of Docker CLI completions
 
 # bun completions
 [ -s "/Users/yrocq/.bun/_bun" ] && source "/Users/yrocq/.bun/_bun"
@@ -111,8 +117,3 @@ fastfetch
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/yrocq/.lmstudio/bin"
 # End of LM Studio CLI section
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/yann/.docker/completions $fpath)
-autoload -Uz compinit
-(( ${+_comps[docker]} )) || compinit
-# End of Docker CLI completions
